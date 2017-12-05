@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>
+      PDDSE
+    </title>
+    <link rel="stylesheet" type="text/css" href="PDDSE.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+  </head>
+  <body>
+    <div id="mainTitle">
+    <h1> Parking and Date Database Search Engine </h1>
+    <p>To use this software please input your License plate to start.
+       Once you search the database for your license plate you can then
+       select other methods of searching to narrow down the search. If you
+       input  a wrong search query, use the reset button to start over.
+       (Ultimatly the final product will restrict the user to input a full
+       license plate. For this assignment we left it open to only 1 character
+       needed, to make searching easy.)</p>
+    <p>Once an item has been filter down, it has been deleted from the table.
+    If you would like to go back you must restart. Also to search by date or
+    time you must select one of the radio buttons then perform the search
+    after a plate number has already been searched!
+  </p>
+  </div>
+
+
+    <div id="licensePlate">
+      Search: <input id="plateSearch" type="text" name="licensePlate" maxlength="8" placeholder="AAAA777" required />
+      <form id="radioButtons">
+        <div id="radioButtons2">
+        <label for="dateIn">Date In</label>
+        <input type="radio" name="Search" id="dateIn">
+      </div>
+      <div id="radioButtons3">
+        <label for="dateOut">Date Out</label>
+        <input type="radio" name="Search" id="dateOut">
+      </div>
+      <div id="radioButtons4">
+        <label for="timeIn">Time In</label>
+        <input type="radio" name="Search" id="timeIn">
+      </div>
+        <div id="radioButtons5">
+        <label for="timeOut">Time Out</label>
+        <input type="radio" name="Search" id="timeOut">
+      </div>
+      </form>
+      <button id="submitButton" onClick="loadCSV()">Search Database</button>
+      <button id="resetButton" onClick="location.reload();">Reset</button>
+  </div>
+  <!--<input type="text" id="plateSearch" onkeyup="search(0)" placeholder="Search by plate number...">-->
+  <div id="CSVTable">
+  </div>
+  <script src="PDDSE.js"></script>
+  </body>
+</html>
